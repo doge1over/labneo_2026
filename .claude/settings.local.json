@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npx react-scripts:*)",
+      "Bash(npm start:*)",
+      "Bash(mv \"LB classicNEW.png\" lb-control.png)",
+      "Bash(mv \"LBmini.png\" lb-mini.png)",
+      "Bash(mv \"LB CellsNEW1,3.png\" lb-cells.png)",
+      "Bash(mv \"LB ReactiveNEW1.png\" lb-reactive.png)",
+      "Bash(mv \"LB VerificationNEW1.png\" lb-verification.png)",
+      "Bash(npx tsc:*)",
+      "Bash(mv index.js index.tsx)",
+      "Bash(mv App.js App.tsx)",
+      "Bash(mv components/Header.js components/Header.tsx)",
+      "Bash(mv components/Footer.js components/Footer.tsx)",
+      "Bash(mv components/ScrollToTop.js components/ScrollToTop.tsx)",
+      "Bash(npx kill-port:*)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(ls:*)",
+      "Bash(identify D:/labneo_new/public/images/logo.png)",
+      "Bash(python3 -c \"from PIL import Image; img=Image.open\\(''D:/labneo_new/public/images/logo.png''\\); print\\(f''Size: {img.size}''\\)\")"
+    ]
+  }
+}

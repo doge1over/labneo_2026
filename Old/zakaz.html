@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LabNeo - Оформление заказа</title>
+  <link rel="stylesheet" href="styleZakaz.css">
+</head>
+
+<body>
+<div class="page-wrapper">
+  <header>
+    <div class="header-inner">
+      <div class="table">
+        <div class="logo">
+          <img src="../../labneo1/public_html/image/logo.png" alt="Логотип">
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-contact-wrapper" id="navContactWrapper">
+          <nav class="table-content">
+            <ul>
+              <li><a href="https://labneo.ru/">Главная</a></li>
+              <li><a href="https://labneo.ru/solution.html">Готовые решения</a></li>
+              <li><a href="https://labneo.ru/comand.html">Команда</a></li>
+              <li><a href="https://labneo.ru/mission.html">О нас</a></li>
+            </ul>
+          </nav>
+          <div class="contact-content">
+            <a href="tel:+79968158524">+7 (996) 815-85-24</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="order-section">
+      <div class="order-container">
+        <div class="order-header">
+          <h1>Оформление заявки на покупку ПО</h1>
+          <p>Заполните форму и мы с Вами свяжемся</p>
+        </div>
+
+        <div class="order-form-wrapper">
+          <form id="contact-form" class="order-form" action="../../labneo1/public_html/form.php" method="post">
+            <div class="form-group">
+              <label for="name">Имя:</label>
+              <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Почта:</label>
+              <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+              <label class="software-label">Выберите интересующее Вас программное обеспечение:</label>
+              <div class="software-options">
+                <div class="checkbox-group">
+                  <input type="checkbox" name="Control" id="Control" value="Control">
+                  <label for="Control">LB Control</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" name="Mini" id="Mini" value="Mini">
+                  <label for="Mini">LB Mini</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" name="Cells" id="Cells" value="Cells">
+                  <label for="Cells">LB Cells</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" name="Reactive" id="Reactive" value="Reactive">
+                  <label for="Reactive">LBReactive (Модуль)</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" name="Verification" id="Verification" value="Verification">
+                  <label for="Verification">LBVerification (Модуль)</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" name="Support" id="Support" value="Support">
+                  <label for="Support">LBSupport (Модуль)</label>
+                </div>
+                <div class="checkbox-group">
+                  <input type="checkbox" name="Archive" id="Archive" value="Archive">
+                  <label for="Archive">LBArchive (Модуль)</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="comments">Пожелания:</label>
+              <textarea name="comments" id="comments" rows="4" placeholder="Ваши пожелания или комментарии..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>ЛабНео © 2025</p>
+            <p>ЛабНео | Все права защищены</p>
+            <div class="company-info">
+                <p><strong>ООО «ЛабНео»</strong></p>
+                <p>Информация о видах ИТ-деятельности: 12.20</p>
+                <p>ИНН/КПП 4706053555/470601001. Основной код ОКВЭД 62.01</p>
+                <p>Юридический адрес: 188663, Россия, Ленинградская область, м.р-н Всеволожский, Г.П. Кузьмоловское, ГП Кузьмоловский, ул. Заводская, д. 3, корп. 245, ком. 4.25</p>
+                <p>Фактический адрес: 188663, Россия, Ленинградская область, м.р-н Всеволожский, Г.П. Кузьмоловское, ГП Кузьмоловский, ул. Заводская, д. 3, корп. 245, ком. 4.25</p>
+                <p>Контактные данные: тел.: +7 (996) 815-85-24, e-mail: info@labneo.ru</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navContactWrapper = document.getElementById('navContactWrapper');
+
+    if (mobileMenuToggle && navContactWrapper) {
+      mobileMenuToggle.addEventListener('click', function() {
+        navContactWrapper.classList.toggle('active');
+
+        const spans = mobileMenuToggle.querySelectorAll('span');
+        if (navContactWrapper.classList.contains('active')) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        } else {
+          spans[0].style.transform = 'none';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = 'none';
+        }
+      });
+
+      const navLinks = document.querySelectorAll('.table-content ul a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navContactWrapper.classList.remove('active');
+
+          const spans = mobileMenuToggle.querySelectorAll('span');
+          spans[0].style.transform = 'none';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = 'none';
+        });
+      });
+    }
+  });
+</script>
+</body>
+</html>

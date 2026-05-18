@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabNeoWebsite</title>
+    <link rel="stylesheet" href="styleComand.css">
+</head>
+
+<body>
+<div class="page-wrapper">
+    <header>
+        <div class="header-inner">
+            <div class="table">
+                <div class="logo">
+                    <img src="../../labneo1/public_html/image/logo.png" alt="Логотип">
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="nav-contact-wrapper" id="navContactWrapper">
+                    <nav class="table-content">
+                        <ul>
+                            <li><a href="https://labneo.ru/">Главная</a></li>
+                            <li><a href="https://labneo.ru/solution.html">Готовые решения</a></li>
+                            <li><a href="https://labneo.ru/comand.html">Команда</a></li>
+                            <li><a href="https://labneo.ru/mission.html">О нас</a></li>
+                        </ul>
+                    </nav>
+                    <div class="contact-content">
+                        <a href="tel:+79968158524">+7 (996) 815-85-24</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="content">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Наша команда</h1>
+                    <p>Мы — компания, основанная на знаниях, с высококвалифицированным персоналом.
+                        Мы гордимся своей способностью понимать и общаться с вами по поводу сложностей ваших проектов,
+                        а также использовать наши устоявшиеся процессы и технологии для удовлетворения ваших конкретных
+                        потребностей.</p>
+                    <p>Благодаря тесным связям с ведущими учёными институтов и научных организаций России и дружественных
+                        стран мы разрабатываем продукт с высокой научной составляющей, и с учётом регуляторных требований
+                        в области обращения лекарственных средств.</p>
+                </div>
+                <div class="header-image">
+                    <img src="../../labneo1/public_html/image/comand.png" alt="ИзоШапка">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>ЛабНео © 2025</p>
+            <p>ЛабНео | Все права защищены</p>
+            <div class="company-info">
+                <p><strong>ООО «ЛабНео»</strong></p>
+                <p>Информация о видах ИТ-деятельности: 12.20</p>
+                <p>ИНН/КПП 4706053555/470601001. Основной код ОКВЭД 62.01</p>
+                <p>Юридический адрес: 188663, Россия, Ленинградская область, м.р-н Всеволожский, Г.П. Кузьмоловское, ГП Кузьмоловский, ул. Заводская, д. 3, корп. 245, ком. 4.25</p>
+                <p>Фактический адрес: 188663, Россия, Ленинградская область, м.р-н Всеволожский, Г.П. Кузьмоловское, ГП Кузьмоловский, ул. Заводская, д. 3, корп. 245, ком. 4.25</p>
+                <p>Контактные данные: тел.: +7 (996) 815-85-24, e-mail: info@labneo.ru</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // JavaScript для мобильного меню
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navContactWrapper = document.getElementById('navContactWrapper');
+
+        if (mobileMenuToggle && navContactWrapper) {
+            mobileMenuToggle.addEventListener('click', function() {
+                navContactWrapper.classList.toggle('active');
+
+                // Анимация для кнопки меню
+                const spans = mobileMenuToggle.querySelectorAll('span');
+                if (navContactWrapper.classList.contains('active')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+
+            // Закрытие меню при клике на ссылку
+            const navLinks = document.querySelectorAll('.table-content ul a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navContactWrapper.classList.remove('active');
+
+                    // Возвращаем кнопку меню в исходное состояние
+                    const spans = mobileMenuToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                });
+            });
+        }
+    });
+</script>
+</body>
+
+</html>

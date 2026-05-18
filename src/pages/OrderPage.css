@@ -1,0 +1,243 @@
+.ord-section {
+  padding: 3rem 0 5rem;
+}
+
+.ord-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left info */
+.ord-info__badge {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.375rem 1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+}
+
+.ord-info h1 {
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.ord-info > p {
+  color: var(--text-light);
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ord-info__features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ord-info__feat {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.ord-info__feat svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* Form */
+.ord-form {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.ord-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.ord-field label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--primary);
+}
+
+.ord-field input,
+.ord-field textarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.9375rem;
+  color: var(--text);
+  background: var(--bg);
+  transition: all var(--transition);
+}
+
+.ord-field input:focus,
+.ord-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(14,165,233,0.08);
+}
+
+.ord-field input::placeholder,
+.ord-field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.ord-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Software select */
+.ord-sw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+}
+
+.ord-sw-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem 0.5rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all var(--transition);
+}
+
+.ord-sw-item:hover {
+  border-color: var(--accent);
+}
+
+.ord-sw-item--active {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+.ord-sw-item__name {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: var(--primary);
+}
+
+.ord-sw-item__sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.125rem;
+}
+
+.ord-sw-item--active .ord-sw-item__name {
+  color: var(--accent);
+}
+
+/* Submit */
+.ord-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  background: var(--accent);
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius);
+  transition: all var(--transition);
+  margin-top: 0.25rem;
+}
+
+.ord-submit:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(14,165,233,0.3);
+}
+
+/* Success */
+.ord-success {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.ord-success__icon {
+  margin-bottom: 1.5rem;
+}
+
+.ord-success h2 {
+  font-weight: 800;
+  font-size: 1.75rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.ord-success p {
+  color: var(--text-light);
+  font-size: 1.125rem;
+}
+
+@media (max-width: 768px) {
+  .ord-section {
+    padding: 2rem 0 3rem;
+  }
+
+  .ord-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .ord-info {
+    text-align: center;
+  }
+
+  .ord-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .ord-info__features {
+    align-items: center;
+  }
+
+  .ord-form {
+    padding: 1.5rem;
+  }
+
+  .ord-sw-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ord-submit {
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .ord-sw-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ord-form {
+    padding: 1.25rem;
+  }
+}
